@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#030b20">
+<title>Adarsh Ki Vaani ™️</title>
+
+<!-- META PIXEL -->
+<script>
+if (!window.__adarshPixelBooted) {
+  window.__adarshPixelBooted = true;
+
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '1432226715738304');
+  fbq('track', 'PageView');
+}
+</script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 50% 35%, #102e67 0%, transparent 55%),
+    linear-gradient(145deg, #020714, #07172f 55%, #020817);
+}
+
+.card {
+  width: 100%;
+  max-width: 390px;
+  text-align: center;
+  padding: 38px 24px 30px;
+  border: 2px solid #238cff;
+  border-radius: 25px;
+  background: linear-gradient(
+    145deg,
+    rgba(30, 100, 190, .19),
+    rgba(5, 17, 43, .88)
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow:
+    0 0 12px rgba(0, 130, 255, .45),
+    0 0 35px rgba(0, 110, 255, .23),
+    inset 0 0 20px rgba(65, 155, 255, .10);
+}
+
+.logo {
+  width: 94px;
+  height: 94px;
+  margin: 0 auto 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 3px solid #54b5ff;
+  background: linear-gradient(145deg, #174e9b, #03142e);
+  color: #fff;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  box-shadow:
+    0 0 12px #168bff,
+    0 0 30px rgba(0, 125, 255, .65),
+    inset 0 0 15px rgba(255,255,255,.12);
+}
+
+h1 {
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: .3px;
+  text-shadow: 0 0 14px rgba(60, 160, 255, .65);
+  margin-bottom: 11px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #b9d9ff;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.join-btn {
+  width: 100%;
+  display: block;
+  padding: 16px 12px;
+  border-radius: 13px;
+  border: 2px solid #82caff;
+  background: linear-gradient(100deg, #0878ed, #1644b7);
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: .7px;
+  box-shadow:
+    0 0 12px rgba(0, 140, 255, .65),
+    0 0 25px rgba(0, 100, 255, .35);
+  transition: .2s ease;
+  cursor: pointer;
+}
+
+.join-btn:active {
+  transform: scale(.97);
+}
+
+.join-btn:disabled {
+  opacity: .75;
+  cursor: wait;
+}
+
+.footer {
+  margin-top: 25px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #83bfff;
+  opacity: .8;
+}
+</style>
+</head>
+
+<body>
+
+<main class="card">
+
+  <div class="logo">AV</div>
+
+  <h1>Adarsh Ki Vaani ™️</h1>
+
+  <p class="subtitle">
+    Welcome to our official Telegram channel.<br>
+    Join us and stay connected.
+  </p>
+
+  <a
+    href="https://t.me/+i0CF4kU9VpRhOWQ1"
+    class="join-btn"
+    id="joinTelegram"
+  >
+    ✦ JOIN TELEGRAM CHANNEL
+  </a>
+
+  <div class="footer">
+    OFFICIAL TELEGRAM COMMUNITY
+  </div>
+
+</main>
+
+<script>
+(function () {
+  const button = document.getElementById('joinTelegram');
+  let subscribeSent = false;
+
+  button.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Prevent duplicate Subscribe events
+    if (subscribeSent) return;
+
+    subscribeSent = true;
+    button.style.pointerEvents = 'none';
+    button.disabled = true;
+    button.textContent = 'CONNECTING...';
+
+    // Only one Subscribe event from this button
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Subscribe');
+    }
+
+    // Allow Pixel request to start before redirect
+    setTimeout(function() {
+      window.location.href =
+        'https://t.me/+i0CF4kU9VpRhOWQ1';
+    }, 500);
+  });
+})();
+</script>
+
+</body>
+</html>
