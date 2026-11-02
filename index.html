@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,20 +6,21 @@
 <meta name="theme-color" content="#030b20">
 <title>Adarsh Ki Vaani ™️</title>
 
-<!-- META PIXEL -->
+<!-- META PIXEL: MANUAL TRACKING -->
 <script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
 if (!window.__adarshPixelBooted) {
   window.__adarshPixelBooted = true;
-
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-
   fbq('init', '1432226715738304');
   fbq('track', 'PageView');
 }
@@ -123,9 +124,9 @@ h1 {
   transform: scale(.97);
 }
 
-.join-btn:disabled {
+.join-btn.processing {
   opacity: .75;
-  cursor: wait;
+  pointer-events: none;
 }
 
 .footer {
@@ -165,35 +166,40 @@ h1 {
 
 </main>
 
+<!-- MANUAL SUBSCRIBE EVENT -->
 <script>
 (function () {
+
   const button = document.getElementById('joinTelegram');
+  const telegramURL = 'https://t.me/+i0CF4kU9VpRhOWQ1';
+
   let subscribeSent = false;
 
   button.addEventListener('click', function(event) {
+
     event.preventDefault();
 
-    // Prevent duplicate Subscribe events
+    // Prevent duplicate events
     if (subscribeSent) return;
 
     subscribeSent = true;
-    button.style.pointerEvents = 'none';
-    button.disabled = true;
+
+    button.classList.add('processing');
     button.textContent = 'CONNECTING...';
 
-    // Only one Subscribe event from this button
+    // MANUAL META SUBSCRIBE EVENT
     if (typeof window.fbq === 'function') {
       window.fbq('track', 'Subscribe');
     }
 
-    // Allow Pixel request to start before redirect
+    // Allow Pixel time to send the event
     setTimeout(function() {
-      window.location.href =
-        'https://t.me/+i0CF4kU9VpRhOWQ1';
-    }, 500);
+      window.location.assign(telegramURL);
+    }, 1000);
+
   });
+
 })();
 </script>
-
 </body>
 </html>
